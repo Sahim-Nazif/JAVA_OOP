@@ -17,7 +17,9 @@ public String getcustName() {
 }
 public void setActBalance(double accountBalance) {
 	
-	if (accountBalance >0)
+	if (accountBalance >0) {
+		throw new IllegalArgumentException("Account Balance should not be zero");
+	}
 		this.accountBalance=accountBalance;
 		
 }
@@ -31,10 +33,10 @@ public double withdraw(double amount ) {
 
 public String toString() {
 	return "My account Number is: " +accountNumber +"\nMy Name is :"+custName+ 
-			"\nI widthdrew  "+accountBalance;
+			"\nToday I widthdrew  "+accountBalance;
 }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
           Check Account= new Check(1002,"Khan");
          System.out.println(Account.getActBalance());
          System.out.println(Account.withdraw(10));
